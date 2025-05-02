@@ -1,0 +1,48 @@
+<!-- templates/agendamentos/criar_cliente.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Cliente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Cadastrar Novo Cliente</h1>
+
+        <form action="{% url 'criar_cliente' %}" method="POST" class="space-y-4">
+            {% csrf_token %}
+
+            <div>
+                <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+                <input type="text" name="nome" id="nome" required value="{{cliente.nome}}" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+
+            <div>
+                <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                <input type="text" name="telefone" id="telefone" required value="{{cliente.telefone}}" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            
+            <div class="flex justify-between mt-6">
+                <a href="{% url 'listar_lavagens' %}" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">
+                    Voltar
+                </a>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+                    Salvar
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+</body>

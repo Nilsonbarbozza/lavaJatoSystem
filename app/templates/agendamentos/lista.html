@@ -7,15 +7,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
-
+    <h1 class="text-3xl font-bold mb-6 text-center py-10 px-10">📅 Lavagens Agendadas</h1>
     <div class="max-w-5xl mx-auto mt-10">
-        <h1 class="text-3xl font-bold mb-6 text-center">📅 Lavagens Agendadas</h1>
-
-        <div class="flex justify-end mb-4">
-            <a href="{% url 'criar_lavagem' %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
-                + Nova Lavagem
-            </a>
-        </div>
+        <div class="flex flex-row-reverse max-w-5xl mx-auto mt-10 gap-x-5">
+            <div class="flex justify-end mb-4">
+                <a href="{% url 'criar_lavagem' %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                    + Nova Lavagem
+                </a>
+            </div>
+            <div class="flex justify-end mb-4">
+                <a href="{% url 'criar_cliente' %}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                    + Criar Cliente
+                </a>
+            </div>
+    </div>
 
         <div class="overflow-x-auto">
             <table class="w-full bg-white shadow rounded-lg">

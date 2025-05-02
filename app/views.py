@@ -12,6 +12,24 @@ def listar_lavagens(request):
     lavagens = Lavagem.objects.select_related('cliente').order_by('-data')
     return render(request, 'agendamentos/lista.html', {'lavagens': lavagens})
 
+# ➕ CREATE – Criar novo cliente
+def criar_cliente(request):
+    if request.method == "GET":
+        return render(request, "agendamentos/criar_cliente.html")
+    
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        telefone = request.POST['telefone']
+    
+    if nome and telefone:
+        cliente = Cliente.objects.create(
+            nome=nome,
+            telefone=telefone,
+        )
+        return redirect('criar_cliente')
+    return render(request, 'agendamentos/criar_cliente.html')
+
+
 # ➕ CREATE – Agendar nova lavagem
 def criar_lavagem(request):
     clientes = Cliente.objects.all()
